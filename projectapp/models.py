@@ -9,3 +9,6 @@ class Project(models.Model):
     image = models.ImageField(upload_to='project/', null=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    # 게시글 생성 시 게시판 이름 나오도록 하는 기능
+    def __str__(self):
+        return f'{self.name}'
